@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
 using JokeBox.Core.Patterns;
 
 namespace API.Accessors
@@ -21,13 +23,13 @@ namespace API.Accessors
         /// </summary>
         /// <param name="username">The username of this user. Needed in order to filter out own jokes.</param>
         /// <param name="countryCode">The localization code for the jokes.</param>
-        public string Get(string username, string countryCode)
+        public async Task<string> Get(string username, string countryCode)
         {
             string url = _baseURL + string.Format("?jokebox_get&user={0}&ccode={1}", username, countryCode);
             try
             {
-                HttpResponseMessage res = _client.GetAsync(url).Result;
-                return res.Content.ReadAsStringAsync().Result;
+                var response = await _client.GetByteArrayAsync(url);
+                return Encoding.GetEncoding("ISO-8859-1").GetString(response, 0, response.Length);
             }
             catch (Exception ex)
             {

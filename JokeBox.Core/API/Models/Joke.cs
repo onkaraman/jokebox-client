@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace JokeBox.Models
+namespace JokeBox.API.Models
 {
     public class Joke
     {

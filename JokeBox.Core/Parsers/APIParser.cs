@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Xml.Linq;
 using JokeBox.Core.Patterns;
-using JokeBox.Models;
+using JokeBox.API.Models;
 
 namespace JokeBox.Parsers
 {
