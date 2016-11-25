@@ -1,0 +1,10 @@
+<resources>
+	<color name="background">#FFD8D8D8</color>
+	<color name="text">#FF1D1D1B</color>
+	<color name="lightgrey">#FF9B9B9B</color>
+	<color name="upvotebox">#FF1D1D1B</color>
+	<color name="downvotebox">#FF9B9B9A</color>
+	<color name="transparent">#00000000</color>
+	<color name="white">#fff</color>
+	<color name="black">#000</color>
+</resources>
