@@ -10,6 +10,8 @@ using JokeBox.Parsers;
 using JokeBox.UI.Views;
 using JokeBox.Core.Localization;
 using Jokebox.Core.Localization;
+using Android.Content;
+using JokeBox.Droid.Activies;
 
 namespace JokeBox.Droid
 {
@@ -87,7 +89,10 @@ namespace JokeBox.Droid
 
         private void dotsClicked(object sender, PopupMenu.MenuItemClickEventArgs e)
         {
-
+            if (e.Item.ToString().Equals(Localization.Static.Raw(ResourceKeyNames.Static.Tell)))
+            {
+                StartActivity(typeof(SetNameActivity));
+            }
         }
 
         /// <summary>

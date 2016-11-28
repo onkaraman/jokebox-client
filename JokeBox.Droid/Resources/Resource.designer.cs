@@ -1223,6 +1223,9 @@ namespace JokeBox.Droid
 			// aapt resource value: 0x7f07004e
 			public const int standardHeaderSize = 2131165262;
 			
+			// aapt resource value: 0x7f07004f
+			public const int textboxPaddingLeft = 2131165263;
+			
 			// aapt resource value: 0x7f07004b
 			public const int textboxWidth = 2131165259;
 			
@@ -1476,20 +1479,23 @@ namespace JokeBox.Droid
 			// aapt resource value: 0x7f02004e
 			public const int MainButtonSelector = 2130837582;
 			
-			// aapt resource value: 0x7f020053
-			public const int notification_template_icon_bg = 2130837587;
-			
 			// aapt resource value: 0x7f02004f
-			public const int Quote = 2130837583;
+			public const int MainEditTextBackground = 2130837583;
+			
+			// aapt resource value: 0x7f020054
+			public const int notification_template_icon_bg = 2130837588;
 			
 			// aapt resource value: 0x7f020050
-			public const int Rating = 2130837584;
+			public const int Quote = 2130837584;
 			
 			// aapt resource value: 0x7f020051
-			public const int Share_Icon = 2130837585;
+			public const int Rating = 2130837585;
 			
 			// aapt resource value: 0x7f020052
-			public const int Sms = 2130837586;
+			public const int Share_Icon = 2130837586;
+			
+			// aapt resource value: 0x7f020053
+			public const int Sms = 2130837587;
 			
 			static Drawable()
 			{
@@ -1540,8 +1546,23 @@ namespace JokeBox.Droid
 			// aapt resource value: 0x7f0b0052
 			public const int MainProgressBar = 2131427410;
 			
+			// aapt resource value: 0x7f0b0070
+			public const int NameEditText = 2131427440;
+			
 			// aapt resource value: 0x7f0b0058
 			public const int QuotationMarks = 2131427416;
+			
+			// aapt resource value: 0x7f0b006e
+			public const int SetNameDots = 2131427438;
+			
+			// aapt resource value: 0x7f0b006d
+			public const int SetNameHeaderLayout = 2131427437;
+			
+			// aapt resource value: 0x7f0b006c
+			public const int SetNameLayout = 2131427436;
+			
+			// aapt resource value: 0x7f0b006f
+			public const int SetNameLogo = 2131427439;
 			
 			// aapt resource value: 0x7f0b005d
 			public const int UpvoteBox = 2131427421;
@@ -2512,6 +2533,9 @@ namespace JokeBox.Droid
 			
 			// aapt resource value: 0x7f080134
 			public const int MainButton = 2131231028;
+			
+			// aapt resource value: 0x7f080135
+			public const int MainEditText = 2131231029;
 			
 			// aapt resource value: 0x7f080133
 			public const int MainTheme = 2131231027;

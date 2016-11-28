@@ -1,3 +1,49 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
-</LinearLayout>
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/SetNameLayout"
+    android:background="@color/background">
+    <RelativeLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/SetNameHeaderLayout">
+        <ImageView
+            android:id="@+id/SetNameDots"
+            android:src="@drawable/dots"
+            android:layout_width="60dp"
+            android:layout_marginTop="20dp"
+            android:layout_height="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:paddingLeft="33dp" />
+        <ImageView
+            android:id="@+id/SetNameLogo"
+            android:src="@drawable/jokeboxlogo"
+            android:layout_width="90dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/SetNameDots" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/BodyLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/SetNameHeaderLayout"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+        <ImageView
+            android:id="@+id/QuotationMarks"
+            android:src="@drawable/quote"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+        <EditText
+            android:id="@+id/NameEditText" />
+    </RelativeLayout>
+</RelativeLayout>

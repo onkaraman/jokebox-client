@@ -19,4 +19,13 @@
 		<item name="android:textAllCaps">false</item>
 		<item name="android:background">@drawable/MainButtonSelector</item>
 	</style>
+
+	<style name="MainEditText" parent="@android:style/Widget.EditText">
+		<item name="android:layout_height">@dimen/buttonHeight</item>
+		<item name="android:paddingLeft">@dimen/textboxPaddingLeft</item>
+		<item name="android:textSize">16sp</item>
+		<item name="android:singleLine">true</item>
+		<item name="android:textColor">@color/background</item>
+		<item name="android:background">@drawable/MainEditTextBackground</item>
+	</style>
 </resources>
