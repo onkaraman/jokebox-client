@@ -37,6 +37,10 @@
     <Compile Include="Persistence\DB\DBConnectionCore.cs" />
     <Compile Include="Persistence\DB\DBSelectSpecs.cs" />
     <Compile Include="Persistence\Models\SimpleItem.cs" />
+    <Compile Include="Localization\Localization.cs" />
+    <Compile Include="Localization\ResourceKeyNames.cs" />
+    <Compile Include="Resources\AppResources.de.Designer.cs" />
+    <Compile Include="Resources\AppResources.Designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="API\" />
@@ -47,9 +51,17 @@
     <Folder Include="Persistence\" />
     <Folder Include="Persistence\DB\" />
     <Folder Include="Persistence\Models\" />
+    <Folder Include="Resources\" />
+    <Folder Include="Localization\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Resources\AppResources.de.resx" />
+    <None Include="Resources\AppResources.en-GB.resx" />
+    <None Include="Resources\AppResources.en-US.resx" />
+    <None Include="Resources\AppResources.pt.resx" />
+    <None Include="Resources\AppResources.resx" />
+    <None Include="Resources\AppResources.tr-TR.resx" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Net.Http.Extensions">

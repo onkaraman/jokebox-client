@@ -6,6 +6,7 @@ using Android.Widget;
 using API.Accessors;
 using JokeBox.API.Models;
 using JokeBox.Parsers;
+using JokeBox.UI.Views;
 
 namespace JokeBox.Droid
 {
@@ -21,10 +22,11 @@ namespace JokeBox.Droid
     {
         private int _jokeIndex;
         private ProgressBar _progBar;
-        private TextView _pointsText;
-        private TextView _jokeContent;
-        private TextView _upvotes;
-        private TextView _downvotes;
+        private ImageView _dots;
+        private MainTextView _pointsText;
+        private MainTextView _jokeContent;
+        private MainTextView _upvotes;
+        private MainTextView _downvotes;
         private RelativeLayout _upvoteBox;
         private RelativeLayout _downvoteBox;
         private List<Joke> _jokes;
@@ -48,12 +50,13 @@ namespace JokeBox.Droid
         private void setupViews()
         {
             _progBar = FindViewById<ProgressBar>(Resource.Id.MainProgressBar);
-            _pointsText = FindViewById<TextView>(Resource.Id.HeaderPointsValue);
-            _jokeContent = FindViewById<TextView>(Resource.Id.JokeText);
-            _upvotes = FindViewById<TextView>(Resource.Id.Upvotes);
-            _downvotes = FindViewById<TextView>(Resource.Id.Downvotes);
-            _upvoteBox = FindViewById<RelativeLayout>(Resource.Id.mainUpvoteBox);
-            _downvoteBox = FindViewById<RelativeLayout>(Resource.Id.mainDownvoteBox);
+            _dots = FindViewById<ImageView>(Resource.Id.MainDots);
+            _pointsText = FindViewById<MainTextView>(Resource.Id.HeaderPointsValue);
+            _jokeContent = FindViewById<MainTextView>(Resource.Id.JokeText);
+            _upvotes = FindViewById<MainTextView>(Resource.Id.Upvotes);
+            _downvotes = FindViewById<MainTextView>(Resource.Id.Downvotes);
+            _upvoteBox = FindViewById<RelativeLayout>(Resource.Id.UpvoteBox);
+            _downvoteBox = FindViewById<RelativeLayout>(Resource.Id.DownvoteBox);
         }
 
         /// <summary>
@@ -61,8 +64,25 @@ namespace JokeBox.Droid
         /// </summary>
         private void assignEvents()
         {
+            _dots.Click += dotsClick;
             _upvoteBox.Click += upvoteClicked;
             _downvoteBox.Click += downvoteClicked;
+        }
+
+        /// <summary>
+        /// Will show a context Menu once the menu dots are clicked.
+        /// </summary>
+        private void dotsClick(object sender, System.EventArgs e)
+        {
+            PopupMenu pm = new PopupMenu(this, _dots);
+            pm.Menu.Add(Resource.String.app_name);
+            pm.MenuItemClick += dotsClicked;
+            pm.Show();
+        }
+
+        private void dotsClicked(object sender, PopupMenu.MenuItemClickEventArgs e)
+        {
+
         }
 
         /// <summary>

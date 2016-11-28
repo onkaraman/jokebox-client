@@ -1,0 +1,6 @@
+<resources>
+	<dimen name="textboxWidth">340dp</dimen>
+	<dimen name="buttonHeight">35sp</dimen>
+	<dimen name="standardFontSize">15sp</dimen>
+	<dimen name="standardHeaderSize">17sp</dimen>
+</resources>

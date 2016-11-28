@@ -54,6 +54,7 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\Views\MainTextView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -76,17 +77,29 @@
     <AndroidResource Include="Resources\drawable\Sms.png" />
     <AndroidResource Include="Resources\layout\Main.axml" />
     <AndroidResource Include="Resources\layout\SetName.axml" />
+    <AndroidResource Include="Resources\values\dimens.xml" />
+    <AndroidResource Include="Resources\drawable\MainButtonDisabled.xml" />
+    <AndroidResource Include="Resources\drawable\MainButtonNormal.xml" />
+    <AndroidResource Include="Resources\drawable\MainButtonPressed.xml" />
+    <AndroidResource Include="Resources\drawable\MainButtonSelector.xml" />
+    <AndroidResource Include="Resources\drawable\dots.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
     <Folder Include="Resources\layout\" />
     <Folder Include="Activities\" />
+    <Folder Include="UI\" />
+    <Folder Include="UI\Views\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\JokeBox.Core\JokeBox.Core.csproj">
       <Project>{AF136559-2B31-4D8E-A941-748B049E5E9B}</Project>
       <Name>JokeBox.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\fonts\segoeui.ttf" />
+    <AndroidAsset Include="Assets\fonts\segoeui-bold.ttf" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

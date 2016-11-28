@@ -20,14 +20,23 @@
             android:indeterminate="true"
             android:layout_marginTop="-2dp" />
         <ImageView
+            android:id="@+id/MainDots"
+            android:src="@drawable/dots"
+            android:layout_width="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_height="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp" />
+        <ImageView
             android:id="@+id/MainLogo"
             android:src="@drawable/jokeboxlogo"
             android:layout_width="90dp"
             android:layout_height="30dp"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="40dp" />
-        <TextView
-            android:text="999"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/MainDots" />
+        <JokeBox.UI.Views.MainTextView
+            android:text="0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/HeaderPointsValue"
@@ -36,7 +45,7 @@
             android:textColor="@color/lightgrey"
             android:layout_alignParentRight="true"
             android:layout_marginRight="35dp" />
-        <TextView
+        <JokeBox.UI.Views.MainTextView
             android:text="p"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -69,7 +78,7 @@
             android:scrollbars="none"
             android:layout_toRightOf="@+id/QuotationMarks"
             android:layout_marginLeft="30dp">
-            <TextView
+            <JokeBox.UI.Views.MainTextView
                 android:id="@+id/JokeText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -81,25 +90,25 @@
         </ScrollView>
     </RelativeLayout>
     <RelativeLayout
-        android:id="@+id/mainDownvoteBox"
+        android:id="@+id/DownvoteBox"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="40dp"
         android:background="@color/downvotebox"
         android:layout_marginLeft="15dp">
         <ImageView
-            android:layout_width="45dp"
-            android:layout_height="45dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:src="@drawable/rating"
             android:tint="@color/white"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="5dp"
             android:fitsSystemWindows="false"
             android:rotation="180" />
-        <TextView
+        <JokeBox.UI.Views.MainTextView
             android:id="@+id/Downvotes"
-            android:text="999"
+            android:text="0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="12sp"
@@ -109,25 +118,25 @@
             android:layout_marginBottom="5dp" />
     </RelativeLayout>
     <RelativeLayout
-        android:id="@+id/mainUpvoteBox"
+        android:id="@+id/UpvoteBox"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="40dp"
         android:background="@color/upvotebox"
         android:layout_alignParentRight="true"
         android:layout_marginRight="15dp">
         <ImageView
-            android:layout_width="45dp"
-            android:layout_height="45dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:src="@drawable/rating"
             android:tint="@color/white"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="5dp"
             android:fitsSystemWindows="false" />
-        <TextView
+        <JokeBox.UI.Views.MainTextView
             android:id="@+id/Upvotes"
-            android:text="999"
+            android:text="0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="12sp"

@@ -1,0 +1,10 @@
+﻿<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/MainButtonPressed"
+          android:state_pressed="true" />
+    <item android:drawable="@drawable/MainButtonPressed"
+          android:state_focused="true" />
+    <item android:drawable="@drawable/MainButtonNormal"
+    	android:state_enabled="true" />
+    <item android:drawable="@drawable/MainButtonDisabled"
+      android:state_enabled="false" />
+</selector>
