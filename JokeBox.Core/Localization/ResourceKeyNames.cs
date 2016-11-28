@@ -1,7 +1,6 @@
-﻿using System.Collections.Generic;
-using JokeBox.Core.Patterns;
+﻿using JokeBox.Core.Patterns;
 
-namespace Hummus.Core.Localization
+namespace Jokebox.Core.Localization
 {
     public class ResourceKeyNames : LazyStatic<ResourceKeyNames>
     {

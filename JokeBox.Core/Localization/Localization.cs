@@ -1,5 +1,5 @@
-﻿using Jokebox.Core.Resources;
-using JokeBox.Core.Patterns;
+﻿using JokeBox.Core.Patterns;
+using JokeBox.Core.Resources;
 
 namespace JokeBox.Core.Localization
 {

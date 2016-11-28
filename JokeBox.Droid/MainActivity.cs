@@ -3,10 +3,13 @@ using System.Threading;
 using Android.App;
 using Android.OS;
 using Android.Widget;
+using Android.Views;
 using API.Accessors;
 using JokeBox.API.Models;
 using JokeBox.Parsers;
 using JokeBox.UI.Views;
+using JokeBox.Core.Localization;
+using Jokebox.Core.Localization;
 
 namespace JokeBox.Droid
 {
@@ -53,6 +56,7 @@ namespace JokeBox.Droid
             _dots = FindViewById<ImageView>(Resource.Id.MainDots);
             _pointsText = FindViewById<MainTextView>(Resource.Id.HeaderPointsValue);
             _jokeContent = FindViewById<MainTextView>(Resource.Id.JokeText);
+            _jokeContent.SetTextIsSelectable(true);
             _upvotes = FindViewById<MainTextView>(Resource.Id.Upvotes);
             _downvotes = FindViewById<MainTextView>(Resource.Id.Downvotes);
             _upvoteBox = FindViewById<RelativeLayout>(Resource.Id.UpvoteBox);
@@ -75,7 +79,8 @@ namespace JokeBox.Droid
         private void dotsClick(object sender, System.EventArgs e)
         {
             PopupMenu pm = new PopupMenu(this, _dots);
-            pm.Menu.Add(Resource.String.app_name);
+            pm.Menu.Add(Localization.Static.Raw(ResourceKeyNames.Static.Tell));
+            pm.Menu.Add(Localization.Static.Raw(ResourceKeyNames.Static.About));
             pm.MenuItemClick += dotsClicked;
             pm.Show();
         }
@@ -88,7 +93,7 @@ namespace JokeBox.Droid
         /// <summary>
         /// Will upvote the current joke.
         /// </summary>
-        private void upvoteClicked (object sender, System.EventArgs e)
+        private void upvoteClicked(object sender, System.EventArgs e)
         {
             ThreadPool.QueueUserWorkItem(o =>
             {

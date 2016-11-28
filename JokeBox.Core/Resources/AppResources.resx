@@ -117,14 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ResourceFlowDirection" xml:space="preserve">
-    <value>LeftToRight</value>
-    <comment>Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</comment>
-  </data>
-  <data name="ResourceLanguage" xml:space="preserve">
-    <value>en-US</value>
-    <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
-  </data>
   <data name="About" xml:space="preserve">
     <value>About Jokebox</value>
   </data>
@@ -133,6 +125,9 @@
   </data>
   <data name="Buchstaben" xml:space="preserve">
     <value> </value>
+  </data>
+  <data name="CCode" xml:space="preserve">
+    <value>EN</value>
   </data>
   <data name="Descr" xml:space="preserve">
     <value>So you never get bored</value>
@@ -144,13 +139,25 @@
     <value>Developed by Areon</value>
   </data>
   <data name="Erzaehlen" xml:space="preserve">
-    <value>Tell</value>
+    <value>Tell a joke</value>
+  </data>
+  <data name="Favorit" xml:space="preserve">
+    <value>favorite</value>
+  </data>
+  <data name="GetUnlimited" xml:space="preserve">
+    <value>Get unlimited version</value>
   </data>
   <data name="Hochladen" xml:space="preserve">
     <value>Upload</value>
   </data>
+  <data name="LimitExceeded" xml:space="preserve">
+    <value>You exceeded the limited version of 50 Jokes per day. But no worries, there's an unlimited version waiting for you :)</value>
+  </data>
   <data name="Mail" xml:space="preserve">
     <value>Mail</value>
+  </data>
+  <data name="MeineFavs" xml:space="preserve">
+    <value>My favorites</value>
   </data>
   <data name="Neuste" xml:space="preserve">
     <value>newest</value>
@@ -158,40 +165,33 @@
   <data name="NochMindestens" xml:space="preserve">
     <value>Characters left:</value>
   </data>
-  <data name="SetName" xml:space="preserve">
-    <value>Before submitting jokes, you need to have your unique and unchangeable name. With your unique name you can collect and track your points. One upvote stands for one point.</value>
-  </data>
-  <data name="Speichern" xml:space="preserve">
-    <value>Save</value>
-  </data>
-  <data name="ZuKurz" xml:space="preserve">
-    <value>Too short</value>
-  </data>
-  <data name="Favorit" xml:space="preserve">
-    <value>favorite</value>
-  </data>
-  <data name="MeineFavs" xml:space="preserve">
-    <value>My favorites</value>
-  </data>
-  <data name="Teilen" xml:space="preserve">
-    <value>share</value>
-  </data>
-  <data name="CCode" xml:space="preserve">
-    <value>EN</value>
-  </data>
-  <data name="Review" xml:space="preserve">
-    <value>You have Jokebox for a long time now and we are happy to see you enjoying it. Now we would like to read your review</value>
-  </data>
   <data name="NoFavs" xml:space="preserve">
     <value>You haven't saved any favorites</value>
   </data>
   <data name="Report" xml:space="preserve">
     <value>Report joke</value>
   </data>
-  <data name="GetUnlimited" xml:space="preserve">
-    <value>Get unlimited version</value>
+  <data name="ResourceFlowDirection" xml:space="preserve">
+    <value>LeftToRight</value>
+    <comment>Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</comment>
   </data>
-  <data name="LimitExceeded" xml:space="preserve">
-    <value>You exceeded the limited version of 50 Jokes per day. But no worries, there's an unlimited version waiting for you :)</value>
+  <data name="ResourceLanguage" xml:space="preserve">
+    <value>en-US</value>
+    <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
+  </data>
+  <data name="Review" xml:space="preserve">
+    <value>You have Jokebox for a long time now and we are happy to see you enjoying it. Now we would like to read your review</value>
+  </data>
+  <data name="SetName" xml:space="preserve">
+    <value>Before submitting jokes, you need to have your unique and unchangeable name. With your unique name you can collect and track your points. One upvote stands for one point.</value>
+  </data>
+  <data name="Speichern" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Teilen" xml:space="preserve">
+    <value>share</value>
+  </data>
+  <data name="ZuKurz" xml:space="preserve">
+    <value>Too short</value>
   </data>
 </root>
