@@ -40,7 +40,7 @@ namespace JokeBox.Core.Persistence.DB
                 }
                 return false;
             }
-            catch (Exception ex) 
+            catch (Exception) 
             {
                 return false;
             }
@@ -64,9 +64,9 @@ namespace JokeBox.Core.Persistence.DB
                 }
                 return false;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Debugger.Break();
+                
             }
             return false;
 		}
@@ -87,7 +87,7 @@ namespace JokeBox.Core.Persistence.DB
                 }
                 return false;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -153,7 +153,7 @@ namespace JokeBox.Core.Persistence.DB
             }
             catch (Exception)
             {
-                Debugger.Break();
+                
             }
             return l;
 		}
@@ -169,7 +169,7 @@ namespace JokeBox.Core.Persistence.DB
             }
             catch (Exception)
             {
-                Debugger.Break();
+                Debug.WriteLine("Size empty");
             }
             return 0;
 		}
@@ -186,7 +186,6 @@ namespace JokeBox.Core.Persistence.DB
             }
             catch (SQLiteException)
             {
-                Debugger.Break();
                 return true;
             }
         }

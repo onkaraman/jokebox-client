@@ -1,9 +1,12 @@
-﻿using Android.App;
+﻿using System;
+using Android.App;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
 using Jokebox.Core.Localization;
 using JokeBox.Core.Localization;
+using JokeBox.Core.Managers;
+using JokeBox.Core.Persistence.Models;
 using JokeBox.UI.Views;
 
 namespace JokeBox.Droid.Activies
@@ -21,11 +24,13 @@ namespace JokeBox.Droid.Activies
         private MainTextView _charsLeft;
         private MainTextView _nameDescription;
         private Button _saveButton;
+        private Random _random = new Random();
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.SetName);
+
             setupViews();
             assignEvents();
         }
@@ -54,6 +59,7 @@ namespace JokeBox.Droid.Activies
         private void assignEvents()
         {
             _editText.TextChanged += editTextTextChanged;
+            _saveButton.Click += saveButtonClick;
         }
 
         /// <summary>
@@ -74,6 +80,30 @@ namespace JokeBox.Droid.Activies
                 _canSave = true;
                 _charsLeft.Text = "";
             }
+        }
+
+        /// <summary>
+        /// Will save the chosen username to the database.
+        /// </summary>
+        /// <param name="sender">Sender.</param>
+        /// <param name="e">E.</param>
+        private void saveButtonClick(object sender, System.EventArgs e)
+        {
+            SimpleItem si = new SimpleItem
+            {
+                Name = "username",
+                Value = _editText.Text.Trim()
+            };
+
+            if (si.Value.ToLower().StartsWith("areon"))
+            {
+                si.Value = string.Format("{0}_fan_{1}", si.Value, _random.Next(1, 1000));
+
+                DBManager.Static.DBAccessor.Clear<SimpleItem>();
+                _editText.Text = si.Value;
+            }
+            DBManager.Static.DBAccessor.Clear<SimpleItem>();
+            DBManager.Static.DBAccessor.Insert<SimpleItem>(si);
         }
     }
 }

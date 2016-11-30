@@ -6,7 +6,7 @@ namespace JokeBox.Core.Persistence.Models
     /// </summary>
     public class SimpleItem
     {
-        public string Name;
-        public string Value;
+        public string Name { get; set; }
+        public string Value { get; set; }
     }
 }

@@ -12,6 +12,9 @@ using JokeBox.Core.Localization;
 using Jokebox.Core.Localization;
 using Android.Content;
 using JokeBox.Droid.Activies;
+using JokeBox.Core.Managers;
+using JokeBox.Persistence;
+using JokeBox.Core.Persistence.Models;
 
 namespace JokeBox.Droid
 {
@@ -26,6 +29,7 @@ namespace JokeBox.Droid
     public class MainActivity : Activity
     {
         private int _jokeIndex;
+        private string _username;
         private ProgressBar _progBar;
         private ImageView _dots;
         private MainTextView _pointsText;
@@ -42,11 +46,29 @@ namespace JokeBox.Droid
             SetContentView(Resource.Layout.Main);
 
             _jokeIndex = 0;
+            DBManager.Static.Init(new DBConnection());
 
+            checkUsername();
             setupViews();
             assignEvents();
             hideJokeUI();
             getJokes();
+        }
+
+        /// <summary>
+        /// Will check wether a username is saved. If so, the current points
+        /// of the user will be downloaded.
+        /// </summary>
+        private void checkUsername()
+        {
+            if (!DBManager.Static.DBAccessor.IsEmpty<SimpleItem>())
+            {
+                SimpleItem si = DBManager.Static.DBAccessor.Select<SimpleItem>()[0];
+                if (si.Name.Equals("username"))
+                {
+                    _username = si.Value;
+                }
+            }
         }
 
         /// <summary>
