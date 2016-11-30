@@ -1546,11 +1546,17 @@ namespace JokeBox.Droid
 			// aapt resource value: 0x7f0b0052
 			public const int MainProgressBar = 2131427410;
 			
+			// aapt resource value: 0x7f0b0071
+			public const int NameCharsLeft = 2131427441;
+			
 			// aapt resource value: 0x7f0b0070
 			public const int NameEditText = 2131427440;
 			
 			// aapt resource value: 0x7f0b0058
 			public const int QuotationMarks = 2131427416;
+			
+			// aapt resource value: 0x7f0b0072
+			public const int SetNameDescription = 2131427442;
 			
 			// aapt resource value: 0x7f0b006e
 			public const int SetNameDots = 2131427438;
@@ -1563,6 +1569,9 @@ namespace JokeBox.Droid
 			
 			// aapt resource value: 0x7f0b006f
 			public const int SetNameLogo = 2131427439;
+			
+			// aapt resource value: 0x7f0b0073
+			public const int SetNameSaveButton = 2131427443;
 			
 			// aapt resource value: 0x7f0b005d
 			public const int UpvoteBox = 2131427421;

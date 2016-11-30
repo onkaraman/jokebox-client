@@ -132,7 +132,7 @@
     <value>Bewerten</value>
   </data>
   <data name="Buchstaben" xml:space="preserve">
-    <value> Buchstaben</value>
+    <value>Buchstaben</value>
   </data>
   <data name="Descr" xml:space="preserve">
     <value>Damit euch niemals langweilig wird.</value>
@@ -156,7 +156,7 @@
     <value>Neuste</value>
   </data>
   <data name="NochMindestens" xml:space="preserve">
-    <value>Noch mindestens </value>
+    <value>Noch mindestens</value>
   </data>
   <data name="SetName" xml:space="preserve">
     <value>Bevor du deine Witze veröffentlichen kannst, benötigst du einen eindeutigen Nutzernamen.

@@ -16,11 +16,13 @@
             android:id="@+id/SetNameDots"
             android:src="@drawable/dots"
             android:layout_width="60dp"
-            android:layout_marginTop="20dp"
-            android:layout_height="15dp"
+            android:layout_marginTop="16dp"
+            android:layout_height="25dp"
             android:layout_alignParentRight="true"
             android:layout_marginRight="10dp"
-            android:paddingLeft="33dp" />
+            android:paddingLeft="33dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp" />
         <ImageView
             android:id="@+id/SetNameLogo"
             android:src="@drawable/jokeboxlogo"
@@ -43,7 +45,57 @@
             android:src="@drawable/quote"
             android:layout_width="40dp"
             android:layout_height="40dp" />
-        <EditText
-            android:id="@+id/NameEditText" />
+        <JokeBox.UI.Views.MainEditText
+            android:id="@+id/NameEditText"
+            style="@style/MainEditText"
+            android:layout_height="@dimen/buttonHeight"
+            android:layout_width="300dp"
+            android:layout_toRightOf="@+id/QuotationMarks"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="5dp"
+            android:layout_alignTop="@+id/QuotationMarks"
+            android:layout_marginTop="5dp" />
+        <JokeBox.UI.Views.MainTextView
+            android:id="@+id/NameCharsLeft"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/NameEditText"
+            android:layout_below="@+id/NameEditText"
+            android:layout_marginTop="5dp"
+            android:text="Chars left"
+            android:textSize="12sp"
+            android:paddingLeft="2dp"
+            android:textColor="@color/lightgrey" />
+        <ScrollView
+            android:id="@+id/BodyScrollView"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:scrollbars="vertical"
+            android:layout_toRightOf="@+id/QuotationMarks"
+            android:layout_marginLeft="21dp"
+            android:layout_below="@+id/NameCharsLeft"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="8dp">
+            <JokeBox.UI.Views.MainTextView
+                android:id="@+id/SetNameDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/MainLogo"
+                android:textSize="17sp"
+                android:textColor="@color/upvotebox"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="35dp" />
+        </ScrollView>
+        <Button
+            android:id="@+id/SetNameSaveButton"
+            android:layout_below="@+id/BodyScrollView"
+            android:layout_height="@dimen/buttonHeight"
+            android:layout_width="310dp"
+            android:layout_centerHorizontal="true"
+            style="@style/MainButton"
+            android:layout_marginTop="15dp"
+            android:text="Save" />
     </RelativeLayout>
 </RelativeLayout>

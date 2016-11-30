@@ -3,5 +3,5 @@
 	<dimen name="buttonHeight">35sp</dimen>
 	<dimen name="standardFontSize">15sp</dimen>
 	<dimen name="standardHeaderSize">17sp</dimen>
-	<dimen name="textboxPaddingLeft">20sp</dimen>
+	<dimen name="textboxPaddingLeft">10sp</dimen>
 </resources>

@@ -4,7 +4,7 @@ using Android.Content;
 using Android.Util;
 using JokeBox.Droid;
 
-namespace ActionRadar.UI.Views
+namespace JokeBox.UI.Views
 {
     public class MainEditText : EditText
     {
@@ -31,8 +31,6 @@ namespace ActionRadar.UI.Views
         {
             _activity = (Activity)context;
             this.Typeface = Android.Graphics.Typeface.CreateFromAsset(Context.Assets, "fonts/segoeui.ttf");
-            this.SetTextColor(Resources.GetColor (Resource.Color.lightgrey));
-            this.SetHintTextColor(Resources.GetColor (Resource.Color.lightgrey));
         }
     }
 }
