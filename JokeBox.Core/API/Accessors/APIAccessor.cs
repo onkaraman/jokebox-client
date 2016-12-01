@@ -101,13 +101,13 @@ namespace API.Accessors
         /// <summary>
         /// Will get the total points of the user.
         /// </summary>
-        public string GetPoints(string username, string countryCode)
+        public async Task<string> GetPoints(string username, string countryCode)
         {
             string url = _baseURL + string.Format("?jokebox_getpoints&ccode={0}&composer={1}", countryCode, username);
             try
             {
-                HttpResponseMessage res = _client.GetAsync(url).Result;
-                return res.Content.ReadAsStringAsync().Result;
+                var response = await _client.GetByteArrayAsync(url);
+                return Encoding.GetEncoding("ISO-8859-1").GetString(response, 0, response.Length);
             }
             catch (Exception ex)
             {

@@ -48,7 +48,6 @@ namespace JokeBox.Droid
             _jokeIndex = 0;
             DBManager.Static.Init(new DBConnection());
 
-            checkUsername();
             setupViews();
             assignEvents();
             hideJokeUI();
@@ -67,8 +66,27 @@ namespace JokeBox.Droid
                 if (si.Name.Equals("username"))
                 {
                     _username = si.Value;
+                    getPoints();
                 }
             }
+        }
+
+        /// <summary>
+        /// Will download and display the current points of the user.
+        /// </summary>
+        private void getPoints()
+        {
+            ThreadPool.QueueUserWorkItem(async o =>
+            {
+                string raw = await APIAccessor.Static.GetPoints("Areon",
+                             Localization.Static.Raw(ResourceKeyNames.Static.CountryCode));
+                int points = APIParser.Static.ParsePoints(raw);
+
+                RunOnUiThread(() =>
+                   {
+                       _pointsText.Text = points.ToString();
+                   });
+            });
         }
 
         /// <summary>
@@ -150,9 +168,12 @@ namespace JokeBox.Droid
         {
             ThreadPool.QueueUserWorkItem(async o =>
             {
-                string raw = await APIAccessor.Static.Get("", "DE");
+                string raw = await APIAccessor.Static.Get("",
+                                 Localization.Static.Raw(ResourceKeyNames.Static.CountryCode));
                 _jokes = APIParser.Static.ParseGet(raw);
+
                 showJoke();
+                checkUsername();
             });
         }
 
@@ -171,13 +192,6 @@ namespace JokeBox.Droid
             _jokeContent.Visibility = Android.Views.ViewStates.Visible;
             _upvoteBox.Visibility = Android.Views.ViewStates.Visible;
             _downvoteBox.Visibility = Android.Views.ViewStates.Visible;
-        }
-
-        /// <summary>
-        /// Will fade in the joke UI.
-        /// </summary>
-        private void fadeInJokeUI()
-        {
         }
 
         /// <summary>
