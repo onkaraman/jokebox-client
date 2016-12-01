@@ -6,7 +6,7 @@ namespace Jokebox.Core.Localization
     {
         public string About = "About";
         public string OneMoment = "EinenMoment";
-        public string DevelopedBy = "EntwickeltVonArean";
+        public string DevelopedBy = "EntwickeltVonAreon";
         public string Tell = "Erzaehlen";
         public string Favorite = "Favorit";
         public string Submit = "Hochladen";

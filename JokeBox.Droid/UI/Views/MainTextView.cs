@@ -38,6 +38,11 @@ namespace JokeBox.UI.Views
         {
             this.Typeface = Typeface.CreateFromAsset(Context.Assets, "fonts/segoeui.ttf");
         }
+
+        public void ChangeFontSize(float size)
+        {
+            this.SetTextSize(ComplexUnitType.Sp, size);
+        }
     }
 }
 

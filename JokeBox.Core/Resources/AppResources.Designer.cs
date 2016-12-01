@@ -170,7 +170,7 @@ namespace JokeBox.Core.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mail.
+        ///   Looks up a localized string similar to Contact us.
         /// </summary>
         public static string Mail {
             get {

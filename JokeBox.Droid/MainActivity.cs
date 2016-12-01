@@ -143,6 +143,10 @@ namespace JokeBox.Droid
                     StartActivity(typeof(ComposeActivity));    
                 }
             }
+            if (e.Item.ToString().Equals(Localization.Static.Raw(ResourceKeyNames.Static.About)))
+            {
+                StartActivity(typeof(AboutActivity));
+            }
         }
 
         /// <summary>

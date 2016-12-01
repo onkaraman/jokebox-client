@@ -16,7 +16,7 @@ namespace JokeBox.Droid.Activities
     /// <summary>
     /// Will let the user compose and submit a joke.
     /// </summary>
-    [Activity(Label = "SetNameActivity",
+    [Activity(Label = "ComposeActivity",
         WindowSoftInputMode = SoftInput.AdjustResize,
         ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class ComposeActivity : Activity

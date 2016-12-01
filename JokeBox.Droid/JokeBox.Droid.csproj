@@ -71,6 +71,7 @@
     <Compile Include="Activities\SetNameActivity.cs" />
     <Compile Include="Persistence\DBConnection.cs" />
     <Compile Include="Activities\ComposeActivity.cs" />
+    <Compile Include="Activities\AboutActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
