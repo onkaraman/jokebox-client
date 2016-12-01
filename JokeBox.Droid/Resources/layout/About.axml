@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/AboutLayout"
+    android:background="@color/background">
+    <RelativeLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/AboutHeaderLayout">
+        <ImageView
+            android:id="@+id/AboutLogo"
+            android:src="@drawable/jokeboxlogo"
+            android:layout_width="95dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="50dp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/AboutBodyLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/AboutHeaderLayout"
+        android:layout_marginTop="43dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+        <ImageView
+            android:id="@+id/QuotationMarks"
+            android:src="@drawable/quote"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+        <JokeBox.UI.Views.MainTextView
+            android:id="@+id/AboutComposer"
+            android:layout_height="wrap_content"
+            android:layout_width="300dp"
+            android:layout_toRightOf="@+id/QuotationMarks"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="5dp"
+            android:layout_alignTop="@+id/QuotationMarks"
+            android:text="Composer"
+            android:textColor="@color/lightgrey"
+            android:textSize="15sp" />
+        <JokeBox.UI.Views.MainEditText
+            android:id="@+id/AboutEditText"
+            android:layout_height="330dp"
+            android:layout_width="300dp"
+            android:layout_below="@+id/AboutComposer"
+            android:layout_toRightOf="@+id/QuotationMarks"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="5dp"
+            android:layout_alignTop="@+id/QuotationMarks"
+            android:layout_marginTop="30dp"
+            android:inputType="textMultiLine"
+            android:gravity="top|left"
+            android:textColor="@color/upvotebox"
+            android:scrollbars="vertical"
+            android:background="@drawable/composeedittextbackground" />
+        <Button
+            android:id="@+id/AboutSubmitButton"
+            android:layout_below="@+id/AboutEditText"
+            android:layout_height="@dimen/buttonHeight"
+            android:layout_width="310dp"
+            android:layout_centerHorizontal="true"
+            style="@style/MainButton"
+            android:layout_marginTop="15dp"
+            android:text="Save" />
+    </RelativeLayout>
+</RelativeLayout>

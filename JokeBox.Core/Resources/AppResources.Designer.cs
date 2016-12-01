@@ -98,7 +98,7 @@ namespace JokeBox.Core.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to So you never get bored.
+        ///   Looks up a localized string similar to So you never get bored..
         /// </summary>
         public static string Descr {
             get {

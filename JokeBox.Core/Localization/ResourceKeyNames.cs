@@ -22,6 +22,7 @@ namespace Jokebox.Core.Localization
         public string TooShort = "ZuKurz";
         public string Review = "Bewerten";
         public string CountryCode = "CCode";
+        public string AboutText = "Descr";
 
         public ResourceKeyNames(){}
     }

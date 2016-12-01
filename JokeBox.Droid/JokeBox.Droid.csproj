@@ -102,6 +102,7 @@
     <AndroidResource Include="Resources\drawable\MainEditTextBackground.xml" />
     <AndroidResource Include="Resources\layout\Compose.axml" />
     <AndroidResource Include="Resources\drawable\ComposeEditTextBackground.xml" />
+    <AndroidResource Include="Resources\layout\About.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
