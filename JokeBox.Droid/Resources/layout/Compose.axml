@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/ComposeLayout"
+    android:background="@color/background">
+    <RelativeLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ComposeHeaderLayout">
+        <ImageView
+            android:id="@+id/ComposeLogo"
+            android:src="@drawable/jokeboxlogo"
+            android:layout_width="95dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="50dp" />
+        <JokeBox.UI.Views.MainTextView
+            android:id="@+id/ComposeCharsLeft"
+            android:layout_width="90dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:text="300"
+            android:textColor="@color/lightgrey"
+            android:textSize="25sp"
+            android:gravity="right"
+            android:layout_marginRight="17dp"
+            android:layout_marginTop="20dp"
+            android:layout_alignBottom="@+id/ComposeLogo" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/ComposeBodyLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ComposeHeaderLayout"
+        android:layout_marginTop="43dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+        <ImageView
+            android:id="@+id/QuotationMarks"
+            android:src="@drawable/quote"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+        <JokeBox.UI.Views.MainTextView
+            android:id="@+id/ComposeComposer"
+            android:layout_height="wrap_content"
+            android:layout_width="300dp"
+            android:layout_toRightOf="@+id/QuotationMarks"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="5dp"
+            android:layout_alignTop="@+id/QuotationMarks"
+            android:text="Composer"
+            android:textColor="@color/lightgrey"
+            android:textSize="15sp" />
+        <JokeBox.UI.Views.MainEditText
+            android:id="@+id/ComposeEditText"
+            android:layout_height="350dp"
+            android:layout_width="300dp"
+            android:layout_below="@+id/ComposeComposer"
+            android:layout_toRightOf="@+id/QuotationMarks"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="5dp"
+            android:layout_alignTop="@+id/QuotationMarks"
+            android:layout_marginTop="30dp"
+            android:inputType="textMultiLine"
+            android:gravity="top|left"
+            android:textColor="@color/upvotebox"
+            android:paddingLeft="-1dp"
+            android:background="@drawable/composeedittextbackground" />
+        <Button
+            android:id="@+id/ComposeSubmitButton"
+            android:layout_below="@+id/ComposeEditText"
+            android:layout_height="@dimen/buttonHeight"
+            android:layout_width="310dp"
+            android:layout_centerHorizontal="true"
+            style="@style/MainButton"
+            android:layout_marginTop="15dp"
+            android:text="Save" />
+    </RelativeLayout>
+</RelativeLayout>

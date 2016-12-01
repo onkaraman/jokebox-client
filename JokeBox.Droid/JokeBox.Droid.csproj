@@ -70,6 +70,7 @@
     <Compile Include="UI\Views\MainEditText.cs" />
     <Compile Include="Activities\SetNameActivity.cs" />
     <Compile Include="Persistence\DBConnection.cs" />
+    <Compile Include="Activities\ComposeActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -99,6 +100,8 @@
     <AndroidResource Include="Resources\drawable\MainButtonSelector.xml" />
     <AndroidResource Include="Resources\drawable\dots.png" />
     <AndroidResource Include="Resources\drawable\MainEditTextBackground.xml" />
+    <AndroidResource Include="Resources\layout\Compose.axml" />
+    <AndroidResource Include="Resources\drawable\ComposeEditTextBackground.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

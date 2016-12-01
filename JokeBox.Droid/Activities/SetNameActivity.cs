@@ -9,7 +9,7 @@ using JokeBox.Core.Managers;
 using JokeBox.Core.Persistence.Models;
 using JokeBox.UI.Views;
 
-namespace JokeBox.Droid.Activies
+namespace JokeBox.Droid.Activities
 {
     /// <summary>
     /// This activity enables the user to set a username for himself.

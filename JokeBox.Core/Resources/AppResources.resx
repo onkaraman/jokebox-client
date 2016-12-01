@@ -148,7 +148,7 @@
     <value>Get unlimited version</value>
   </data>
   <data name="Hochladen" xml:space="preserve">
-    <value>Upload</value>
+    <value>Submit</value>
   </data>
   <data name="LimitExceeded" xml:space="preserve">
     <value>You exceeded the limited version of 50 Jokes per day. But no worries, there's an unlimited version waiting for you :)</value>

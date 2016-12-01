@@ -10,8 +10,7 @@ using JokeBox.Parsers;
 using JokeBox.UI.Views;
 using JokeBox.Core.Localization;
 using Jokebox.Core.Localization;
-using Android.Content;
-using JokeBox.Droid.Activies;
+using JokeBox.Droid.Activities;
 using JokeBox.Core.Managers;
 using JokeBox.Persistence;
 using JokeBox.Core.Persistence.Models;
@@ -127,11 +126,22 @@ namespace JokeBox.Droid
             pm.Show();
         }
 
+        /// <summary>
+        /// Will open an activity to set a username if none is set, otherwise the
+        /// compose or about activity will be started.
+        /// </summary>
         private void dotsClicked(object sender, PopupMenu.MenuItemClickEventArgs e)
         {
             if (e.Item.ToString().Equals(Localization.Static.Raw(ResourceKeyNames.Static.Tell)))
             {
-                StartActivity(typeof(SetNameActivity));
+                if (DBManager.Static.DBAccessor.IsEmpty<SimpleItem>())
+                {
+                    StartActivity(typeof(SetNameActivity));
+                }
+                else 
+                {
+                    StartActivity(typeof(ComposeActivity));    
+                }
             }
         }
 

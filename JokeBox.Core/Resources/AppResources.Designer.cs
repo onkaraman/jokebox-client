@@ -152,7 +152,7 @@ namespace JokeBox.Core.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Upload.
+        ///   Looks up a localized string similar to Submit.
         /// </summary>
         public static string Hochladen {
             get {

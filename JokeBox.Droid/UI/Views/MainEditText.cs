@@ -32,6 +32,11 @@ namespace JokeBox.UI.Views
             _activity = (Activity)context;
             this.Typeface = Android.Graphics.Typeface.CreateFromAsset(Context.Assets, "fonts/segoeui.ttf");
         }
+
+        public void ChangeFontSize(float size)
+        {
+            this.SetTextSize(ComplexUnitType.Sp, size);
+        }
     }
 }
 

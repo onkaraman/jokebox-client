@@ -9,7 +9,7 @@ namespace Jokebox.Core.Localization
         public string DevelopedBy = "EntwickeltVonArean";
         public string Tell = "Erzaehlen";
         public string Favorite = "Favorit";
-        public string Upload = "Hochladen";
+        public string Submit = "Hochladen";
         public string Mail = "Mail";
         public string MyFavs = "MeineFavs";
         public string CharsLeft = "NochMindestens";
