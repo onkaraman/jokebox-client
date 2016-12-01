@@ -119,13 +119,13 @@ namespace API.Accessors
         /// <summary>
         /// Will submit a joke to the database.
         /// </summary>
-        public string Submit(string username, string content, string countryCode)
+        public async Task<string> Submit(string username, string content, string countryCode)
         {
             string url = _baseURL + string.Format("?jokebox_submit&ccode={0}&composer={1}&content={2}", countryCode, username, content);
             try
             {
-                HttpResponseMessage res = _client.GetAsync(url).Result;
-                return res.Content.ReadAsStringAsync().Result;
+                var response = await _client.GetByteArrayAsync(url);
+                return Encoding.GetEncoding("ISO-8859-1").GetString(response, 0, response.Length);
             }
             catch (Exception ex)
             {

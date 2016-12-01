@@ -12,6 +12,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/ComposeHeaderLayout">
+        <ProgressBar
+            android:id="@+id/ComposeProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:indeterminate="true"
+            android:layout_marginTop="-3dp" />
         <ImageView
             android:id="@+id/ComposeLogo"
             android:src="@drawable/jokeboxlogo"
@@ -58,7 +65,7 @@
             android:textSize="15sp" />
         <JokeBox.UI.Views.MainEditText
             android:id="@+id/ComposeEditText"
-            android:layout_height="350dp"
+            android:layout_height="330dp"
             android:layout_width="300dp"
             android:layout_below="@+id/ComposeComposer"
             android:layout_toRightOf="@+id/QuotationMarks"
@@ -69,7 +76,7 @@
             android:inputType="textMultiLine"
             android:gravity="top|left"
             android:textColor="@color/upvotebox"
-            android:paddingLeft="-1dp"
+            android:scrollbars="vertical"
             android:background="@drawable/composeedittextbackground" />
         <Button
             android:id="@+id/ComposeSubmitButton"
