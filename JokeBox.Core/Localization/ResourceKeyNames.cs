@@ -23,6 +23,7 @@ namespace Jokebox.Core.Localization
         public string Review = "Bewerten";
         public string CountryCode = "CCode";
         public string AboutText = "Descr";
+        public string Exception = "Exception";
 
         public ResourceKeyNames(){}
     }

@@ -1,9 +1,11 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using Android.App;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
 using API.Accessors;
+using HockeyApp.Android.Metrics;
 using Jokebox.Core.Helpers;
 using Jokebox.Core.Localization;
 using JokeBox.Core.Localization;
@@ -52,11 +54,11 @@ namespace JokeBox.Droid.Activities
 
             _progBar.Visibility = ViewStates.Invisible;
             _charsLeft.Text = _maxLength.ToString();
-            _composer.MakeBold();
             _composer.Text = DBManager.Static.DBAccessor.Select<SimpleItem>()[0].Value;
+            _composer.MakeBold();
             _editText.ChangeFontSize(19);
             _submitButton.Text = Localization.Static.Raw(ResourceKeyNames.Static.Submit);
-
+            _submitButton.Enabled = false;
         }
 
         /// <summary>
@@ -97,9 +99,16 @@ namespace JokeBox.Droid.Activities
 
                 ThreadPool.QueueUserWorkItem(async asynco =>
                 {
-                    string username = DBManager.Static.DBAccessor.Select<SimpleItem>()[0].Value;
-                    await APIAccessor.Static.Submit(username, text,
-                                     Localization.Static.Raw(ResourceKeyNames.Static.CountryCode));
+                    try
+                    {
+                        string username = DBManager.Static.DBAccessor.Select<SimpleItem>()[0].Value;
+                        await APIAccessor.Static.Submit(username, text,
+                                         Localization.Static.Raw(ResourceKeyNames.Static.CountryCode));
+                    }
+                    catch(Exception ex)
+                    {
+                        MetricsManager.TrackEvent(ex.StackTrace);
+                    }
 
                     RunOnUiThread(() =>
                     {

@@ -98,7 +98,7 @@ namespace JokeBox.Core.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to So you never get bored..
+        ///   Looks up a localized string similar to JokeBox was first released for Windows Phone in summer 2017. Since it has grown steadily it is now available on Android too. You can write us any suggestions you like..
         /// </summary>
         public static string Descr {
             get {
@@ -130,6 +130,15 @@ namespace JokeBox.Core.Resources {
         public static string Erzaehlen {
             get {
                 return ResourceManager.GetString("Erzaehlen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error: Couldn&apos;t reach server..
+        /// </summary>
+        public static string Exception {
+            get {
+                return ResourceManager.GetString("Exception", resourceCulture);
             }
         }
         

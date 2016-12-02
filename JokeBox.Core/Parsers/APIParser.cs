@@ -40,7 +40,6 @@ namespace JokeBox.Parsers
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
-                Debugger.Break();
             }
 
             return jokes;

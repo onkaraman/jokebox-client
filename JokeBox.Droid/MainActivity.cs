@@ -1,19 +1,22 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using Android.App;
 using Android.OS;
-using Android.Widget;
 using Android.Views;
+using Android.Widget;
 using API.Accessors;
-using JokeBox.API.Models;
-using JokeBox.Parsers;
-using JokeBox.UI.Views;
-using JokeBox.Core.Localization;
+using HockeyApp.Android;
+using HockeyApp.Android.Metrics;
 using Jokebox.Core.Localization;
-using JokeBox.Droid.Activities;
+using JokeBox.API.Models;
+using JokeBox.Core.Localization;
 using JokeBox.Core.Managers;
-using JokeBox.Persistence;
 using JokeBox.Core.Persistence.Models;
+using JokeBox.Droid.Activities;
+using JokeBox.Parsers;
+using JokeBox.Persistence;
+using JokeBox.UI.Views;
 
 namespace JokeBox.Droid
 {
@@ -42,6 +45,9 @@ namespace JokeBox.Droid
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            CrashManager.Register(this, "55794e0b8b4044838f74e37fa9197d5d");
+            MetricsManager.Register(this, Application, "55794e0b8b4044838f74e37fa9197d5d");
+
             SetContentView(Resource.Layout.Main);
 
             _jokeIndex = 0;
@@ -182,12 +188,20 @@ namespace JokeBox.Droid
         {
             ThreadPool.QueueUserWorkItem(async o =>
             {
+            try
+            {
                 string raw = await APIAccessor.Static.Get("",
                                  Localization.Static.Raw(ResourceKeyNames.Static.CountryCode));
                 _jokes = APIParser.Static.ParseGet(raw);
 
                 showJoke();
                 checkUsername();
+            }
+            catch (Exception ex)
+            {
+                MetricsManager.TrackEvent(ex.StackTrace);
+                _jokeContent.Text = Localization.Static.Raw(ResourceKeyNames.Static.Exception);
+            }
             });
         }
 
@@ -196,16 +210,16 @@ namespace JokeBox.Droid
         /// </summary>
         private void hideJokeUI()
         {
-            _jokeContent.Visibility = Android.Views.ViewStates.Invisible;
-            _upvoteBox.Visibility = Android.Views.ViewStates.Invisible;
-            _downvoteBox.Visibility = Android.Views.ViewStates.Invisible;
+            _jokeContent.Visibility = ViewStates.Invisible;
+            _upvoteBox.Visibility = ViewStates.Invisible;
+            _downvoteBox.Visibility = ViewStates.Invisible;
         }
 
         private void showJokeUI()
         {
-            _jokeContent.Visibility = Android.Views.ViewStates.Visible;
-            _upvoteBox.Visibility = Android.Views.ViewStates.Visible;
-            _downvoteBox.Visibility = Android.Views.ViewStates.Visible;
+            _jokeContent.Visibility = ViewStates.Visible;
+            _upvoteBox.Visibility = ViewStates.Visible;
+            _downvoteBox.Visibility = ViewStates.Visible;
         }
 
         /// <summary>
@@ -215,12 +229,22 @@ namespace JokeBox.Droid
         {
             RunOnUiThread(() =>
             {
-                showJokeUI();
-                _progBar.Visibility = Android.Views.ViewStates.Invisible;
+                try
+                {
+                    showJokeUI();
+                    _progBar.Visibility = ViewStates.Invisible;
 
-                _jokeContent.Text = _jokes[_jokeIndex].content;
-                _upvotes.Text = _jokes[_jokeIndex].upvotes.ToString();
-                _downvotes.Text = _jokes[_jokeIndex].downvotes.ToString();
+                    _jokeContent.Text = _jokes[_jokeIndex].content;
+                    _upvotes.Text = _jokes[_jokeIndex].upvotes.ToString();
+                    _downvotes.Text = _jokes[_jokeIndex].downvotes.ToString();
+                }
+                catch (Exception ex)
+                {
+                    MetricsManager.TrackEvent(ex.StackTrace);
+                    _jokeContent.Text = Localization.Static.Raw(ResourceKeyNames.Static.Exception);
+                    _upvoteBox.Visibility = ViewStates.Gone;
+                    _downvoteBox.Visibility = ViewStates.Gone;
+                }
             });
         }
     }

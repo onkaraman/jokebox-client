@@ -28,6 +28,7 @@ namespace JokeBox.Droid.Activities
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.About);
             setupViews();
+            assignEvents();
         }
 
         /// <summary>
@@ -43,7 +44,7 @@ namespace JokeBox.Droid.Activities
             _developedBy.MakeBold();
             _developedBy.Text = Localization.Static.Raw(ResourceKeyNames.Static.DevelopedBy);
             _description.Text = Localization.Static.Raw(ResourceKeyNames.Static.AboutText);
-            _description.ChangeFontSize(17);
+            _description.ChangeFontSize(16);
             _reviewButton.Text = Localization.Static.Raw(ResourceKeyNames.Static.Review);
             _contactButton.Text = Localization.Static.Raw(ResourceKeyNames.Static.Mail);
         }

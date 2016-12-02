@@ -130,7 +130,7 @@
     <value>EN</value>
   </data>
   <data name="Descr" xml:space="preserve">
-    <value>So you never get bored.</value>
+    <value>JokeBox was first released for Windows Phone in summer 2017. Since it has grown steadily it is now available on Android too. You can write us any suggestions you like.</value>
   </data>
   <data name="EinenMoment" xml:space="preserve">
     <value>One moment</value>
@@ -193,5 +193,8 @@
   </data>
   <data name="ZuKurz" xml:space="preserve">
     <value>Too short</value>
+  </data>
+  <data name="Exception" xml:space="preserve">
+    <value>Error: Couldn't reach server.</value>
   </data>
 </root>
